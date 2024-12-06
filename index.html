@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人作品集</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 返回顶部按钮样式 */
+        .back-to-top {
+            display: none; /* 默认隐藏 */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .back-to-top:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>欢迎来到我的作品集</h1>
+    <nav>
+        <a href="#home">主页</a>
+        <a href="#portfolio">作品集</a>
+        <a href="#contact">联系我</a>
+    </nav>
+</header>
+
+<section id="home">
+    <h2>关于我</h2>
+    <p>你好！我是一个热爱设计和开发的创意工作者。在这里你可以看到我的一些作品。</p>
+</section>
+
+<section id="portfolio">
+    <h2>作品集</h2>
+    <div class="portfolio-item">
+        <h3>项目 1</h3>
+        <p>这是我做的第一个项目的描述。</p>
+    </div>
+    <div class="portfolio-item">
+        <h3>项目 2</h3>
+        <p>这是我做的第二个项目的描述。</p>
+    </div>
+    <div class="portfolio-item">
+        <h3>项目 3</h3>
+        <p>这是我做的第三个项目的描述。</p>
+    </div>
+    <!-- 可以继续添加更多项目 -->
+</section>
+
+<section id="contact">
+    <h2>联系我</h2>
+    <p>如果你有任何问题或想合作，请通过以下方式联系我：</p>
+    <form>
+        <label for="name">姓名:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">电子邮件:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="message">信息:</label><br>
+        <textarea id="message" name="message" required></textarea><br>
+        <input type="submit" value="发送">
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2024 个人作品集</p>
+</footer>
+
+<!-- 返回顶部按钮 -->
+<button id="backToTop" class="back-to-top">返回顶部</button>
+
+<script>
+    // 获取按钮
+    const backToTopButton = document.getElementById('backToTop');
+
+    // 当用户向下滚动时显示按钮
+    window.onscroll = function() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    };
+
+    // 当用户点击按钮时，滚动到顶部
+    backToTopButton.onclick = function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // 平滑滚动
+        });
+    };
+</script>
+
+</body>
+</html>
